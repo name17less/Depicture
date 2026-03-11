@@ -1,0 +1,22 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+public class TopicController
+{
+    private TopicRepository repository = new TopicRepository();
+
+    public async Task<List<Topic>> GetTopics()
+    {
+        return await repository.GetTopics();
+    }
+
+    public bool IsTopicRead(string id)
+    {
+        return repository.IsTopicRead(id);
+    }
+
+    public void MarkTopicRead(string id)
+    {
+        repository.MarkTopicRead(id);
+    }
+}
