@@ -8,21 +8,25 @@ public static class ServerDataPlug
         {
             new Category
             {
+                id = "Artists",
                 title = "Artists"
             },
 
             new Category
             {
+                id = "Styles",
                 title = "Styles"
             },
             
             new Category
             {
+                id = "Epochs",
                 title = "Epochs"
             },
             
             new Category
             {
+                id = "Countries",
                 title = "Countries"
             }
         };
@@ -36,7 +40,7 @@ public static class ServerDataPlug
             {
                 id = "impressionism",
                 title = "Impressionism",
-                category = "Styles",
+                categoryId = "Styles",
                 cards = new List<Card>()
                 {
                     new Card { title="Origin", text="Impressionism started in France..." },
@@ -48,7 +52,7 @@ public static class ServerDataPlug
             {
                 id = "vangogh",
                 title = "Vincent van Gogh",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -60,7 +64,7 @@ public static class ServerDataPlug
             {
                 id = "vangigh",
                 title = "Vincent van Gigh",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -72,7 +76,7 @@ public static class ServerDataPlug
             {
                 id = "vangagh",
                 title = "Vincent van Gagh",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -84,7 +88,7 @@ public static class ServerDataPlug
             {
                 id = "vangokhu",
                 title = "Vincent van Gokhu",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -96,7 +100,7 @@ public static class ServerDataPlug
             {
                 id = "van",
                 title = "Vincent van ",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -108,7 +112,7 @@ public static class ServerDataPlug
             {
                 id = "gagh",
                 title = "Vincent Gagh",
-                category = "Artists",
+                categoryId = "Artists",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -120,7 +124,7 @@ public static class ServerDataPlug
             {
                 id = "vangogh1",
                 title = "Vincent van Gogh",
-                category = "Artists1",
+                categoryId = "Artists1",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -132,7 +136,7 @@ public static class ServerDataPlug
             {
                 id = "vangogh2",
                 title = "Vincent van Gogh",
-                category = "Artists2",
+                categoryId = "Artists2",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },
@@ -144,7 +148,7 @@ public static class ServerDataPlug
             {
                 id = "vangogh3",
                 title = "Vincent van Gogh",
-                category = "Artists3",
+                categoryId = "Artists3",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", text="Dutch post-impressionist painter..." },

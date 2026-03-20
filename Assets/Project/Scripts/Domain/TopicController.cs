@@ -9,6 +9,11 @@ public class TopicController
     {
         return await repository.GetTopics();
     }
+    
+    public async Task<List<Category>> GetCategories()
+    {
+        return await repository.GetCategories();
+    }
 
     public bool IsTopicRead(string id)
     {
