@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine.UI;
 
 public class TopicMenuUI : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TopicMenuUI : MonoBehaviour
 
     public Transform categoryTabsParent;
     public GameObject categoryButtonPrefab;
+    
+    public GameObject topicItemWrapperPrefab;
 
     public TopicViewUI topicView;
 
@@ -64,12 +67,27 @@ public class TopicMenuUI : MonoBehaviour
         if (currentCategory == null)
             return;
 
+        int index = 0;
         foreach (Topic topic in allTopics)
         {
             if (topic.category != currentCategory)
                 continue;
+            
+            GameObject objWrap = Instantiate(topicItemWrapperPrefab, topicListParent);
+            HorizontalLayoutGroup layoutGroup = objWrap.GetComponent<HorizontalLayoutGroup>();
 
-            GameObject obj = Instantiate(topicButtonPrefab, topicListParent);
+            if (index % 2 == 0)
+            {
+                layoutGroup.padding.left = 0;
+                layoutGroup.padding.right = 400;
+            }
+            else
+            {
+                layoutGroup.padding.left = 400;
+                layoutGroup.padding.right = 0;
+            }
+            
+            GameObject obj = Instantiate(topicButtonPrefab, objWrap.transform);
 
             TopicButtonUI button = obj.GetComponent<TopicButtonUI>();
 
@@ -78,6 +96,8 @@ public class TopicMenuUI : MonoBehaviour
                 controller.IsTopicRead(topic.id),
                 topicView
             );
+
+            index++;
         }
 
         await Task.CompletedTask;
