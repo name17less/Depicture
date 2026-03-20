@@ -99,4 +99,9 @@ public class TopicMenuUI : MonoBehaviour
 
         await Task.CompletedTask;
     }
+
+    public async void Refresh()
+    {
+        await LoadTopics();
+    }
 }
