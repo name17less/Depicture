@@ -5,6 +5,6 @@ public class Topic
 {
     public string id;
     public string title;
-    public string category;
+    public string categoryId;
     public List<Card> cards;
 }

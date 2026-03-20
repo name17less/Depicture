@@ -65,6 +65,11 @@ public class TopicViewUI : MonoBehaviour
 
         // Возвращаем меню выбора тем
         if (topicMenuPanel != null)
+        {
             topicMenuPanel.SetActive(true);
+
+            TopicMenuUI topicMenuUI = topicMenuPanel.GetComponent<TopicMenuUI>();
+            if (topicMenuUI != null) topicMenuUI.Refresh();
+        }
     }
 }
