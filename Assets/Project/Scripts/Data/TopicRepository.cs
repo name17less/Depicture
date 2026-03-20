@@ -12,6 +12,11 @@ public class TopicRepository
     {
         return await network.GetTopics();
     }
+    
+    public async Task<List<Category>> GetCategories()
+    {
+        return await network.GetCategories();
+    }
 
     public bool IsTopicRead(string id)
     {

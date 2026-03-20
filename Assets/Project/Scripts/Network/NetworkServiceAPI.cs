@@ -5,9 +5,11 @@ public class NetworkService
 {
     public async Task<List<Topic>> GetTopics()
     {
-        // имитация сетевого запроса
-        await Task.Delay(500);
-
         return ServerDataPlug.GetTopics();
+    }
+
+    public async Task<List<Category>> GetCategories()
+    {
+        return ServerDataPlug.GetCategories();
     }
 }

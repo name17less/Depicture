@@ -17,7 +17,7 @@ public class TopicMenuUI : MonoBehaviour
 
     private TopicController controller = new TopicController();
 
-    private string currentCategory = null;
+    private string currentCategoryId = null;
 
     private List<Topic> allTopics = new List<Topic>();
 
@@ -29,26 +29,23 @@ public class TopicMenuUI : MonoBehaviour
         CreateCategoryButtons();
     }
 
-    void CreateCategoryButtons()
+    async void CreateCategoryButtons()
     {
-        HashSet<string> categories = new HashSet<string>();
+        List<Category> categories = await controller.GetCategories();
 
-        foreach (Topic topic in allTopics)
-            categories.Add(topic.category);
-
-        foreach (string category in categories)
-        {
+        foreach (Category category in categories){
+            
             GameObject obj = Instantiate(categoryButtonPrefab, categoryTabsParent);
 
             CategoryButtonUI button = obj.GetComponent<CategoryButtonUI>();
 
-            button.Setup(category, this);
+            button.Setup(category.title, this);
         }
     }
 
-    public async void SelectCategory(string category, CategoryButtonUI button)
+    public async void SelectCategory(string categoryId, CategoryButtonUI button)
     {
-        currentCategory = category;
+        currentCategoryId = categoryId;
 
         if (activeCategoryButton != null)
             activeCategoryButton.SetActive(false);
@@ -64,13 +61,13 @@ public class TopicMenuUI : MonoBehaviour
         foreach (Transform child in topicListParent)
             Destroy(child.gameObject);
 
-        if (currentCategory == null)
+        if (currentCategoryId == null)
             return;
 
         int index = 0;
         foreach (Topic topic in allTopics)
         {
-            if (topic.category != currentCategory)
+            if (topic.categoryId != currentCategoryId)
                 continue;
             
             GameObject objWrap = Instantiate(topicItemWrapperPrefab, topicListParent);
@@ -101,5 +98,10 @@ public class TopicMenuUI : MonoBehaviour
         }
 
         await Task.CompletedTask;
+    }
+
+    public async void Refresh()
+    {
+        await LoadTopics();
     }
 }
