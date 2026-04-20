@@ -36,6 +36,7 @@ public static class ServerDataPlug
                 id = "vangogh",
                 title = "Vincent van Gogh",
                 categoryId = "Artists",
+                quizId = "artistsQ",
                 cards = new List<Card>()
                 {
                     new Card { title="Biography", 
@@ -46,6 +47,21 @@ public static class ServerDataPlug
                     new Card { title="Famous works", 
                         text="Starry Night (1889) is one of the most famous paintings in the world. It is kept in the Museum of Modern Art, New York.",
                         image = Resources.Load<Sprite>("Images/vangogh2")
+                    }
+                }
+            },
+            
+            new Topic
+            {
+                id = "davinci",
+                title = "Leonardo da Vinci",
+                categoryId = "Artists",
+                cards = new List<Card>()
+                {
+                    new Card
+                    {
+                        title="Biography",
+                        text = "One of the most famous artists in the world."
                     }
                 }
             },
@@ -151,6 +167,20 @@ public static class ServerDataPlug
                 cards = new List<Card>()
                 {
                     new Card { title="Origin", 
+                        text="It is a European period of history and cultural movement, very roughly defined as covering the 14th through 17th centuries,[4][5] though sometimes more narrowly defined for instance as only covering the 15th through 16th centuries.[6] It marked the transition from the Middle Ages to modernity and was characterized by the European rediscovery and revival of the literary, philosophical, and artistic achievements of classical antiquity.",
+                        image = Resources.Load<Sprite>("Images/renaissance1")
+                    },
+                }
+            },
+            
+            new Topic
+            {
+                id = "renaissance1",
+                title = "Renaissance",
+                categoryId = "Epochs",
+                cards = new List<Card>()
+                {
+                    new Card { title="Origin1", 
                         text="It is a European period of history and cultural movement, very roughly defined as covering the 14th through 17th centuries,[4][5] though sometimes more narrowly defined for instance as only covering the 15th through 16th centuries.[6] It marked the transition from the Middle Ages to modernity and was characterized by the European rediscovery and revival of the literary, philosophical, and artistic achievements of classical antiquity.",
                         image = Resources.Load<Sprite>("Images/renaissance1")
                     },
