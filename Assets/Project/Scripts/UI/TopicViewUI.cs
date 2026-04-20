@@ -9,6 +9,9 @@ public class TopicViewUI : MonoBehaviour
     public TextMeshProUGUI cardText;
     public GameObject topicMenuPanel; // <-- новая ссылка на меню
 
+    public GameObject quizButton;
+    public QuizMenuUI quizMenu;
+    
     private Topic currentTopic;
     private int index;
 
@@ -24,7 +27,9 @@ public class TopicViewUI : MonoBehaviour
         // Скрываем меню выбора тем
         if (topicMenuPanel != null)
             topicMenuPanel.SetActive(false);
-
+        
+        quizButton.SetActive(!string.IsNullOrEmpty(topic.quizId));
+        
         ShowCard();
     }
 
@@ -59,6 +64,15 @@ public class TopicViewUI : MonoBehaviour
         cardImage.sprite = card.image;
     }
 
+    public void StartQuiz()
+    {
+        if (quizMenu != null && currentTopic != null)
+        {
+            gameObject.SetActive(false);
+            quizMenu.StartQuiz(currentTopic.quizId);
+        }
+    }
+    
     public void Close()
     {
         gameObject.SetActive(false);
