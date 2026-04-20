@@ -7,4 +7,5 @@ public class Topic
     public string title;
     public string categoryId;
     public List<Card> cards;
+    public string quizId = null;
 }
